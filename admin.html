@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración - TuSubasta</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="INDEX.HTML" class="logo">TuSubasta - Admin</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="INDEX.HTML">Ver Sitio</a></li>
+            <li><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="form-container">
+        <h2>Agregar Nuevo Producto a Subasta</h2>
+        <form id="add-item-form">
+          <div class="form-group">
+            <label for="item-name">Nombre del Producto:</label>
+            <input type="text" id="item-name" required />
+          </div>
+          <div class="form-group">
+            <label for="start-price">Precio Inicial ($):</label>
+            <input type="number" id="start-price" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="min-bid">Monto Mínimo de Puja ($):</label>
+            <input type="number" id="min-bid" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="item-image">URL de la Imagen:</label>
+            <input
+              type="text"
+              id="item-image"
+              placeholder="https://via.placeholder.com/400x300"
+              required
+            />
+            <small>Por ahora, usa una URL de una imagen existente.</small>
+          </div>
+          <div class="form-group">
+            <label for="duration">Duración de la Subasta:</label>
+            <select id="duration" required>
+              <option value="1">1 Hora</option>
+              <option value="2">2 Horas</option>
+              <option value="3">3 Horas</option>
+              <option value="4">4 Horas</option>
+              <option value="5">5 Horas</option>
+              <option value="6">6 Horas</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Iniciar Subasta
+          </button>
+          <button
+            type="button"
+            id="cancel-edit-btn"
+            class="btn btn-secondary btn-block"
+            style="display: none; margin-top: 10px"
+          >
+            Cancelar Edición
+          </button>
+        </form>
+      </div>
+
+      <h2 style="margin-top: 50px">Subastas Activas</h2>
+      <div id="current-items-list">
+        <!-- Los items se cargarán aquí dinámicamente -->
+      </div>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>
